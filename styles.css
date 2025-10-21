@@ -20,8 +20,9 @@ header {
   height: 100px;
   align-items: center;
   text-align: center;
+  position: relative;
   z-index: 100;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.25); /* igual al botón del carrito */
 }
 
 /* Logo */
@@ -64,13 +65,14 @@ header {
 .barraDeBusqueda input[type="text"] {
   width: 100%;
   max-width: 600px;
-  padding: 8px;
+  padding: 5px 8px; /* antes 8px → más compacto */
   border: 1px solid #ccc;
   border-radius: 25px 0 0 25px;
+  font-size: 0.95rem; /* opcional: mantiene equilibrio visual */
 }
 
 .barraDeBusqueda button {
-  padding: 10px 20px;
+  padding: 6px 18px; /* antes 10px 20px → más bajo */
   border: 1px solid #ccc;
   background-color: #ffffff;
   color: #333;
@@ -81,12 +83,13 @@ header {
 
 /* Barra de navegación */
 nav {
-  grid-column: 2/3;
-  grid-row: 2/3;
+  grid-column: 2 / 3;
+  grid-row: 2 / 3;
   display: flex;
   justify-content: center;
-  position: sticky;
-  top: 0;
+  align-self: end;       /* alinea el nav al borde inferior de la fila del grid */
+  margin: 0;             /* elimina márgenes que puedan empujar hacia arriba */
+  position: relative;    /* mantiene dentro del flujo del grid */
 }
 
 nav ul {
@@ -110,6 +113,74 @@ nav ul li a {
   text-shadow: 1px 0 1px rgba(0, 0, 0, 0.2),
                -1px 0 1px rgba(0, 0, 0, 0.2);
   line-height: 1;
+} 
+.separador {
+  pointer-events: none;
+  color: rgba(255, 255, 255, 0.4);
+  font-weight: normal;
+  font-size: 18px;
+  text-shadow: 1px 0 1px rgba(0, 0, 0, 0.2),
+               -1px 0 1px rgba(0, 0, 0, 0.2);
+  line-height: 1;
+}
+
+.boton-carrito {
+  position: relative;
+  top: -5px;                        /* 5px más arriba */
+  background-color: #005bb5;        /* color central del header */
+  border: 2px solid #ccc;          /* reborde blanco */
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.25);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.boton-carrito i {
+  color: white;                      /* icono blanco */
+  font-size: 22px;
+}
+
+/* Hover */
+.boton-carrito:hover {
+  transform: scale(1.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Tooltip */
+.boton-carrito .tooltip {
+  position: absolute;
+  bottom: -35px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #333;
+  color: #ccc;
+  font-size: 14px;
+  padding: 5px 10px;
+  border-radius: 6px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  white-space: nowrap;
+}
+
+.boton-carrito .tooltip::after {
+  content: "";
+  position: relative;
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent transparent #333 transparent;
+}
+
+.boton-carrito:hover .tooltip {
+  opacity: 1;
 }
 
 /* ==========================
@@ -135,7 +206,10 @@ main {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   border-radius: 10px;
 }
-
+.BannerPrincipal img {
+  width: 100%;
+  border-radius: 10px;
+}
 /* ==========================
    VENTANA DE PRODUCTOS
 ========================== */

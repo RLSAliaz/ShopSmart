@@ -1,0 +1,228 @@
+/* ==========================
+   ESTILOS GLOBALES
+========================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Lato', sans-serif;
+}
+
+/* ==========================
+   HEADER
+========================== */
+header {
+  display: grid;
+  grid-template-columns: 1fr 3fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  background: linear-gradient(to right, #0087f5, #005bb5, #0087f5);
+  padding: 10px;
+  height: 100px;
+  align-items: center;
+  text-align: center;
+  z-index: 100;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Logo */
+.logo {
+  width: 270px;
+  height: auto;
+  margin-right: 60px;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+}
+
+/* Opciones Usuario */
+.opcionesUsuario {
+  position: sticky;
+  top: 0;
+  grid-column: 3/4;
+  grid-row: 1/2;
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  gap: 20px;
+}
+
+.opcionesUsuario li a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+/* Barra de búsqueda */
+.barraDeBusqueda {
+  grid-column: 2/3;
+  grid-row: 1/2;
+  display: flex;
+  justify-content: center;
+}
+
+.barraDeBusqueda input[type="text"] {
+  width: 100%;
+  max-width: 600px;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 25px 0 0 25px;
+}
+
+.barraDeBusqueda button {
+  padding: 10px 20px;
+  border: 1px solid #ccc;
+  background-color: #ffffff;
+  color: #333;
+  font-weight: bold;
+  border-radius: 0 25px 25px 0;
+  cursor: pointer;
+}
+
+/* Barra de navegación */
+nav {
+  grid-column: 2/3;
+  grid-row: 2/3;
+  display: flex;
+  justify-content: center;
+  position: sticky;
+  top: 0;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.separador {
+  pointer-events: none;
+  color: rgba(255, 255, 255, 0.4);
+  font-weight: normal;
+  font-size: 18px;
+  text-shadow: 1px 0 1px rgba(0, 0, 0, 0.2),
+               -1px 0 1px rgba(0, 0, 0, 0.2);
+  line-height: 1;
+}
+
+/* ==========================
+   MAIN
+========================== */
+main {
+  padding: 20px;
+  min-height: 1000px;
+  display: grid;
+  grid-template-columns: 1fr 4fr 1fr;
+  grid-template-rows: auto auto;
+  background-color: #ebebeb;
+  gap: 30px;
+}
+
+/* Banner principal */
+.BannerPrincipal {
+  grid-column: 2 / 3;
+  justify-self: center;
+  width: 100%;
+  display: block;
+  margin-top: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+}
+
+/* ==========================
+   VENTANA DE PRODUCTOS
+========================== */
+.ventanaDeProductos {
+  grid-column: 2 / 3;
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+}
+
+/* Cuadrícula de productos (4x2 fijo) */
+.gridProductos {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 columnas fijas */
+  gap: 25px;
+  justify-items: center;
+  align-items: start;
+}
+
+/* Tarjeta de producto */
+.producto {
+  background-color: #f8f8f8;
+  border-radius: 10px;
+  padding: 15px;
+  text-align: center;
+  width: 100%;
+  max-width: 220px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.producto:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+}
+
+/* Imagen del producto */
+.producto img {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+/* Nombre y precio */
+.producto h3 {
+  font-size: 16px;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+.producto p {
+  font-size: 15px;
+  color: #005bb5;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+/* Estrellas de valoración */
+.estrellas {
+  color: #ffc107;
+  font-size: 16px;
+}
+
+/* ==========================
+   FOOTER
+========================== */
+footer {
+  background: linear-gradient(to right, #0087f5, #005bb5, #0087f5);
+  color: white;
+  text-align: center;
+  padding: 10px;
+  height: 60px;
+  box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.5);
+}
+
+/* ==========================
+   CONTENEDOR GENÉRICO
+========================== */
+.contenedor {
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  padding: 10px;
+  margin: 10px;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}

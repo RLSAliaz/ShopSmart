@@ -1,0 +1,143 @@
+/*Estilo basico*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Lato', sans-serif;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+/*Estilo del header*/
+
+header {
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr ;
+    background: linear-gradient(to right, #0087f5, #005bb5, #0087f5);
+    height: 250px;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.25); /* igual al botón del carrito */
+    margin: 0 ;
+    position: relative;
+}
+
+.logo {
+    width: 270px;
+    grid-column: 2 / 3;
+    grid-row: 1/2;
+    height: auto;
+    justify-self: center;
+}
+
+h2 {
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+    color: white;
+    text-align: center;
+    font-size: 2rem;
+    margin-top: 20px;
+}
+
+
+/*Estilos del Main*/
+main {
+    
+    flex: 1;
+    display: flex;
+    background-color: white;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+/*Formulario de registro*/
+#register-form {
+    display: flex;
+    flex-direction: column;    /* Elementos uno debajo del otro */
+    background: white;
+    padding: 30px 40px;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    width: 320px;
+    gap: 10px; /* Espaciado entre elementos */
+    position: relative ;
+    margin-top: -200px ;
+}
+
+#register-form label {
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 3px;
+}
+
+#register-form input {
+  padding: 8px 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 14px;
+}
+
+#register-form input:focus {
+  outline: none;
+  border-color: #0087f5;
+  box-shadow: 0 0 4px rgba(0, 135, 245, 0.5);
+}
+
+#register-form button {
+  margin-top: 10px;
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  background-color: #0087f5;
+  color: white;
+  font-weight: bold;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+#register-form button:hover {
+  background-color: #005bb5;
+}
+
+
+.terminos {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 15px 0;
+  font-size: 14px;
+  color: #333;
+}
+
+.terminos input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  accent-color: #0087f5; /* celeste del header */
+  cursor: pointer;
+}
+
+.terminos a {
+  color: #005bb5;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.terminos a:hover {
+  text-decoration: underline;
+}
+
+/*Estilos footer*/
+footer {
+
+    background: linear-gradient(to right, #0087f5, #005bb5, #0087f5);
+    color: white;
+    text-align: center;
+    padding: 10px;
+    height: 60px;
+    box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.5);
+}

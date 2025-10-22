@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>SmartShop</title>
   <meta name="description" content="Tienda online de SmartShop.">
-  <link rel="stylesheet" href="stylesRegister.css">
+  <link rel="stylesheet" href="stylesSession.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap" rel="stylesheet">
 </head>
@@ -14,29 +14,24 @@
 <body>
     <header>
        <img src="Imagenes/LogoSmartShop.png" class="logo" alt="Logo" >
-       <h2>Registrate gratis y mira todos nuestros productos!</h2>
+       <h2>Ingresá y mirá todos nuestros nuevos productos y ofertas!</h2>
     </header>
     <main>
         <div class="ContenedorDeRegistro">
-        <form id="register-form" action="#" method="post" novalidate>
-            
-            <label for="name">Nombre Completo</label>
-            <input id="name" name="name" type="text" required />
+        <form id="session-form" action="#" method="post" novalidate>           
             
             <label for="email">Email</label>
             <input id="email" name="email" type="email" required />
-            
-            <label for="email">Numero de Telefono</label>
-            <input id="email" name="email" type="email" required />
-            
+                        
             <label for="password">Contraseña</label>
             <input id="password" name="password" type="password" minlength="8" required />
-            <div class="terminos">
+            
+            <div class="recordarme">
                 <input type="checkbox" id="acepto" name="acepto" required />
-                <label for="acepto">Acepto los <a href="#">términos y condiciones</a> y estoy de acuerdo con la <a href="#">Politica de privacidad</a></a></label>
+                <label for="acepto">¿Desea mantener sesión iniciada?</label>
             </div>
 
-            <button type="submit">Registrarse</button>
+            <button type="submit">Iniciar sesión</button>
         </form>
         </div>
     </main>

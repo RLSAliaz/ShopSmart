@@ -37,21 +37,26 @@ header {
 
 /* Opciones Usuario */
 .opcionesUsuario {
-  position: sticky;
-  top: 0;
-  grid-column: 3/4;
-  grid-row: 1/2;
+  position: absolute;
+  top: 10px;
+  right: 20px;
   display: flex;
-  justify-content: center;
   list-style: none;
-  gap: 20px;
+  gap: 15px;
 }
 
 .opcionesUsuario li a {
   color: white;
   text-decoration: none;
   font-weight: bold;
-  font-size: 18px;
+  font-size: 16px;
+}
+
+
+.opcionesUsuario li a:hover {
+  color: #cce7ff;
+  text-shadow: 0 0 5px rgba(255,255,255,0.6);
+  transition: 0.3s ease;
 }
 
 /* Barra de búsqueda */
@@ -81,6 +86,17 @@ header {
   cursor: pointer;
 }
 
+.barraDeBusqueda button:hover {
+  background-color: #e4e4e4;
+  transform: scale(1.05);
+  transition: 0.3s ease;
+}
+
+.barraDeBusqueda input:hover {
+  border-color: #80bfff;
+  transition: 0.3s ease;
+} 
+
 /* Barra de navegación */
 nav {
   grid-column: 2 / 3;
@@ -104,6 +120,13 @@ nav ul li a {
   font-weight: bold;
   font-size: 18px;
 }
+
+nav ul li a:hover {
+  color: #cce7ff;
+  text-shadow: 0 0 5px rgba(255,255,255,0.6);
+  transform: scale(1.05);
+  transition: 0.3s ease;
+}                               
 
 .separador {
   pointer-events: none;
@@ -142,7 +165,9 @@ nav ul li a {
 
 .boton-carrito i {
   color: white;                      /* icono blanco */
-  font-size: 22px;
+  font-size: 18px;
+  transform: translate(-1px, 2px);
+
 }
 
 /* Hover */
@@ -299,4 +324,185 @@ footer {
   display: flex;
   justify-content: center;
   align-content: center;
+}
+
+/* ================================
+   📱 HEADER RESPONSIVE — CELULARES
+   (≤ 768px, versión anterior pedida)
+=================================== */
+
+
+
+
+
+
+/* ================================
+   📱 HEADER RESPONSIVE — CELULARES
+   (≤ 768px)
+=================================== */
+@media (max-width: 768px) {
+
+  /* ====== HEADER ====== */
+  header {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+
+    /* 🔥 ESTO EVITA QUE ALGO SE SALGA */
+    max-width: 100%;     
+    width: 100%;         
+    overflow-x: hidden;  
+
+    /* 🔥 ESPACIO INTERNO PARA QUE NADA TOQUE BORDES */
+    padding: 15px 20px;
+
+    gap: 10px;
+    height: auto;
+    position: relative;
+    box-sizing: border-box;   /* importante para que padding no cause overflow */
+  }
+
+
+  /* ====== 1) OPCIONES USUARIO ARRIBA ====== */
+  .opcionesUsuario {
+    order: 0;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 4px;
+
+    max-width: calc(100% - 20px); /* evita que se rompa el diseño */
+    overflow-x: hidden;
+  }
+
+  .opcionesUsuario li a {
+    font-size: 14px;
+    word-break: keep-all;
+  }
+
+
+  /* ====== 2) LOGO ====== */
+  .logo {
+    order: 1;
+    max-width: 150px;
+    margin: 50px auto 0 auto; /* espacio para las opciones arriba */
+    position: static;
+  }
+
+
+  /* ====== 3) BARRA DE BÚSQUEDA ====== */
+  .barraDeBusqueda {
+    order: 2;
+    width: 100%;
+    justify-content: center;
+    box-sizing: border-box;
+  }
+
+  .barraDeBusqueda input[type="text"] {
+    width: 100%;
+    max-width: none;
+    font-size: 14px;
+    box-sizing: border-box;
+  }
+
+  .barraDeBusqueda button {
+    padding: 6px 14px;
+  }
+
+
+  /* ====== 4) NAV ====== */
+  nav {
+    order: 3;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    overflow-x: hidden; /* previene desbordes */
+    box-sizing: border-box;
+  }
+
+  nav ul {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+  }
+
+  nav ul li a {
+    font-size: 14px;
+  }
+
+  .separador {
+    display: none;
+  }
+
+
+  /* ====== 5) CARRITO ====== */
+  .boton-carrito {
+    width: 40px;
+    height: 40px;
+    top: 0;
+    transform: scale(0.9);
+  }
+
+  .boton-carrito i {
+    font-size: 18px;
+  }
+}
+
+/* ============================
+   MAIN — MOBILE PORTRAIT (≤480px)
+============================ */
+@media (max-width: 480px) {
+
+  /* Espaciado general */
+  main {
+    padding: 10px 15px;
+    width: 100%;
+    overflow-x: hidden;
+    box-sizing: border-box;
+  }
+
+.contenedor.BannerPrincipal {
+  display: none;
+}
+
+
+  /* -------- GRID DE PRODUCTOS -------- */
+  .gridProductos {
+    display: grid;
+    grid-template-columns: 1fr;   /* 1 producto por fila */
+    gap: 20px;
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  /* -------- TARJETA DE PRODUCTO -------- */
+  .producto {
+    width: 100%;
+    max-width: 100%;
+    padding: 12px;
+    box-sizing: border-box;
+
+    /* que no se rompa el diseño */
+    border-radius: 8px;
+  }
+
+  .producto img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    border-radius: 6px;
+  }
+
+  .producto h3 {
+    font-size: 16px;
+    margin-top: 8px;
+  }
+
+  .producto p {
+    font-size: 14px;
+  }
 }

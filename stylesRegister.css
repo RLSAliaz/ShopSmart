@@ -170,25 +170,29 @@ footer {
 
   /* --- Main --- */
   main {
-    padding: 20px;
     width: 100%;
-    max-width: 760px;
-    margin: 0 auto;
+    max-width: 760px;         /* 🔥 evita que se extienda demasiado */
+    margin: 0 auto;           /* 🔥 centra TODO el contenido del main */
+    display: flex;
+    flex-direction: column;
+    align-items: center;      /* 🔥 centra horizontalmente */
     justify-content: flex-start;
-  }
+    padding: 20px 15px;
+    box-sizing: border-box;
+}
 
-  #register-form {
-    width: 80%;         /* más ancho en landscape */
-    max-width: 400px;
-    margin-top: 0;
+#register-form {
+    width: 100%;              /* 🔥 siempre ocupa el espacio disponible del main */
+    max-width: 380px;         /* 🔥 mantiene un tamaño elegante */
+    margin: 0 auto;           /* 🔥 centra el formulario dentro del main */
     padding: 25px;
     position: static;
-  }
+}
 
-  /* --- Footer --- */
-  footer {
+
+/* --- Footer --- */
+footer {
     height: auto;
     padding: 12px;
     font-size: 15px;
   }
-}

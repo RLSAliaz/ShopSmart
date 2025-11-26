@@ -133,3 +133,57 @@ footer {
     height: 60px;
     box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.5);
 }
+
+/* ===================================
+   📱 MOBILE LANDSCAPE (481px–760px)
+=================================== */
+@media (max-width: 760px) {
+
+  /* --- Header --- */
+  header {
+    height: auto;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .logo {
+    width: 200px;
+    margin: 0;
+  }
+
+  h2 {
+    font-size: 1.6rem;
+    margin: 0;
+  }
+
+  /* --- Main --- */
+  main {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;      /* 🔥 Centra horizontalmente */
+    justify-content: flex-start;  /* 🔥 Centra verticalmente */
+    top-padding: 40px;
+    padding: 20px 15px;
+    box-sizing: border-box;
+  }
+
+  /* FORMULARIO */
+  #session-form {
+    width: 100%;
+    max-width: 330px;
+    position: static !important; /* 🔥 Cancela relative y permite centrado */
+    margin: 0 auto !important;   /* 🔥 Centrado perfecto */
+    padding: 25px 20px;
+  }
+}
+  /* --- Footer --- */
+  footer {
+    height: auto;
+    padding: 12px;
+    font-size: 15px;
+  }
+}

@@ -326,6 +326,15 @@ footer {
   align-content: center;
 }
 
+/* ================================
+   📱 HEADER RESPONSIVE — CELULARES
+   (≤ 768px, versión anterior pedida)
+=================================== */
+
+
+
+
+
 
 /* ================================
    📱 HEADER RESPONSIVE — CELULARES
@@ -443,7 +452,10 @@ footer {
   }
 }
 
-@media (max-width: 760px) {
+/* ============================
+   MAIN — MOBILE PORTRAIT (≤480px)
+============================ */
+@media (max-width: 480px) {
 
   /* Espaciado general */
   main {

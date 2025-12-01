@@ -1,62 +1,84 @@
 <!doctype html>
 <html lang="es">
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>SmartShop</title>
   <meta name="description" content="Tienda online de SmartShop.">
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+
 </head>
+
 <body>
 
   <!-- CABECERA -->
   <header>
-    <a href="Index.html">
+    <div class="header-container">
+
+      <a href="Index.html">
         <img src="Imagenes/LogoSmartShop.png" alt="Logo" class="logo">
-    </a>
-    <ul class="opcionesUsuario">
-      <li><a href="session.html">Iniciar sesión</a></li>
-      <li><p class="separador">|</p></li>
-      <li><a href="register.html">Registrarse</a></li>
-    </ul>
-
-    <form action="a" method="get" class="barraDeBusqueda">
-      <input type="text" placeholder="Buscar...">
-      <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
-    </form>
+      </a>
+      
     
-    <nav>
-      <ul>
-        <li><a href="#">Ofertas</a></li>
-        <li><a href="#" class="separador">|</a></li>
-        <li><a href="#">Tendencias</a></li>
-        <li><a href="#" class="separador">|</a></li>
+      <div class="BotonesResponsive"> 
+        <!-- BOTÓN DEL CARRITO RESPONSIVE -->
+        <button id="boton-carrito-Responsive" class="carritoResponsive"><i class="bi bi-cart2"></i></i></button>
+        <!-- BOTÓN DEL MENÚ RESPONSIVE -->
+        <button id="boton-menu" class="menu-toggle"><i class="bi bi-justify"></i></i></i></button>
+      </div>
 
 
-        <!-- BOTÓN DEL CARRITO -->
-        <li class="boton-carrito">
-             <i class="fa-solid fa-cart-plus"></i>
-             <span class="tooltip">Mi carrito</span>
+      <ul class="opcionesUsuario">
+        <li><a href="session.html">Ingresar</a></li>
+        <li>
+          <p class="separador">|</p>
         </li>
-
-        <li><a href="#" class="separador">|</a></li>
-        <li><a href="#">Productos</a></li>
-        <li><a href="#" class="separador">|</a></li>
-        <li><a href="#">Sucursales</a></li>
+        <li><a href="register.html">Registrarse</a></li>
       </ul>
-    </nav>
+
+      <form action="a" method="get" class="barraDeBusqueda">
+        <input type="text" placeholder="Buscar...">
+        <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+      </form>
+
+      <nav>
+         <ul>
+          <button id="boton-menu" class="menu-close BotonesResponsive">X</button>
+          <li class="opcionesUsuarioResponsive" ><a href="session.html">Ingresar</a></li>
+          <li class="opcionesUsuarioResponsive" ><a href="register.html">Registrarse</a></li>
+          <li><a href="#">Ofertas</a></li>
+          <li><a href="#" class="separador">|</a></li>
+          <li><a href="#">Productos</a></li>
+          <li><a href="#" class="separador">|</a></li>
+
+          <!-- BOTÓN DEL CARRITO -->
+          <li class="boton-carrito">
+            <i class="bi bi-cart2"></i>
+            <span class="tooltip">Mi carrito</span>
+          </li>
+
+          <li><a href="#" class="separador">|</a></li>
+          <li><a href="#">Sucursales</a></li>
+          <li><a href="#" class="separador">|</a></li>
+          <li><a href="#">Contactanos</a></li>
+        </ul>
+      </nav>
+
+    </div>
   </header>
 
   <!-- CONTENIDO PRINCIPAL -->
   <main>
-    <div class="contenedor BannerPrincipal">
+    <div class="contenedor-BannerPrincipal">
       <img src="Imagenes/watermarked-51a2089a-1c37-4098-8dbf-eaf5e4b1c64f.png" alt="Banner Principal">
     </div>
 
     <section class="ventanaDeProductos">
-      <h2 class="tituloProductos">Nuevos Productos!</h2>
+      <h2 class="tituloProductos">Nuevos productos!</h2>
 
       <div class="gridProductos">
         <div class="producto">
@@ -126,4 +148,5 @@
 
   <script src="script.js" defer></script>
 </body>
+
 </html>

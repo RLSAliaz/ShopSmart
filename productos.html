@@ -1,0 +1,317 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>SmartShop</title>
+  <meta name="description" content="Tienda online de SmartShop.">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="productos.css">
+
+</head>
+
+<body>
+
+  <!-- CABECERA -->
+  <header>
+    <div class="header-container">
+
+      <a href="Index.html">
+        <img src="Imagenes/LogoSmartShop.png" alt="Logo" class="logo">
+      </a>
+
+
+      <div class="BotonesResponsive">
+        <!-- BOTÓN DEL CARRITO RESPONSIVE -->
+        <button id="boton-carrito-Responsive" class="carritoResponsive"><i class="bi bi-cart2"></i></i></button>
+        <!-- BOTÓN DEL MENÚ RESPONSIVE -->
+        <button id="boton-menu" class="menu-toggle"><i class="bi bi-justify"></i></i></i></button>
+      </div>
+
+
+      <ul class="opcionesUsuario">
+        <li><a href="session.html">Ingresar</a></li>
+        <li>
+          <p class="separador">|</p>
+        </li>
+        <li><a href="register.html">Registrarse</a></li>
+      </ul>
+
+      <form action="a" method="get" class="barraDeBusqueda">
+        <input type="text" placeholder="Buscar...">
+        <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+      </form>
+
+      <nav>
+        <ul>
+          <button id="boton-menu" class="menu-close BotonesResponsive">X</button>
+          <li class="opcionesUsuarioResponsive"><a href="session.html">Ingresar</a></li>
+          <li class="opcionesUsuarioResponsive"><a href="register.html">Registrarse</a></li>
+          <li><a href="#">Ofertas</a></li>
+          <li><a href="#" class="separador">|</a></li>
+          <li><a href="productos.html">Productos</a></li>
+          <li><a href="#" class="separador">|</a></li>
+
+          <!-- BOTÓN DEL CARRITO -->
+          <li class="boton-carrito">
+            <i class="bi bi-cart2"></i>
+            <span class="tooltip">Mi carrito</span>
+          </li>
+
+          <li><a href="#" class="separador">|</a></li>
+          <li><a href="#">Sucursales</a></li>
+          <li><a href="#" class="separador">|</a></li>
+          <li><a href="#">Contactanos</a></li>
+        </ul>
+      </nav>
+
+    </div>
+  </header>
+
+
+  <main>
+    <section class="ventanaDeProductos">
+      <a href="agregarProductos.html" class="btn-cargar">Cargar nuevo producto</a>
+
+      <section class="listado-productos">
+
+        <article class="producto-item">
+          <img src="Imagenes/Auriculares gamer rgb thunderx.jpg" alt="Auriculares Gamer">
+          <div class="info">
+            <h3>Auriculares Gamer RGB “ThunderX”</h3>
+            <p>Con micrófono, luces RGB y reducción de ruido.</p>
+            <span class="precio" data-precio="21500">$21.500</span>
+          </div>
+
+          <button class="btn-agregar-carrito">
+            <i class="bi bi-cart-plus"></i> Agregar al carrito
+          </button>
+
+          <button class="btn-comprar">
+            <i class="bi bi-bag-check"></i> Comprar Ahora
+          </button>
+
+        </article>
+
+        <article class="producto-item">
+          <img src="Imagenes/mouse ganer optico predator.jpg" alt="Mouse Gamer">
+          <div class="info">
+            <h3>Mouse Gamer Óptico 6400DPI “Predator”</h3>
+            <p>6 botones programables, cable mallado, ideal para shooters.</p>
+            <span class="precio" data-precio="13000">$13.000</span>
+          </div>
+          <button class="btn-agregar-carrito">
+            <i class="bi bi-cart-plus"></i> Agregar al carrito
+          </button>
+
+          <button class="btn-comprar">
+            <i class="bi bi-bag-check"></i> Comprar Ahora
+          </button>
+        </article>
+
+        <article class="producto-item">
+          <img src="Imagenes/Teclado Mecánico Redragon K552.jpg" alt="Teclado">
+          <div class="info">
+            <h3>Teclado Mecánico Redragon K552</h3>
+            <p>Switch blue, iluminación RGB dinámica, anti-ghosting.</p>
+            <span class="precio" data-precio="38000">$38.000</span>
+          </div>
+          <button class="btn-agregar-carrito">
+            <i class="bi bi-cart-plus"></i> Agregar al carrito
+          </button>
+
+          <button class="btn-comprar">
+            <i class="bi bi-bag-check"></i> Comprar Ahora
+          </button>
+        </article>
+
+        <article class="producto-item">
+          <img src="Imagenes/Monitor LED 24” Full HD Samsung.jpeg" alt="Monitor">
+          <div class="info">
+            <h3>Monitor LED 24” Full HD Samsung</h3>
+            <p>Pantalla 75Hz, marco ultra-slim.</p>
+            <span class="precio" data-precio="179000">$179.000</span>
+          </div>
+
+          <button class="btn-agregar-carrito">
+            <i class="bi bi-cart-plus"></i> Agregar al carrito
+          </button>
+
+          <button class="btn-comprar">
+            <i class="bi bi-bag-check"></i> Comprar Ahora
+          </button>
+        </article>
+
+        <article class="producto-item">
+          <img src="Imagenes/Silla Gamer “Nitro GT”.jpg" alt="Silla gamer">
+          <div class="info">
+            <h3>Silla Gamer “Nitro GT”</h3>
+            <p>Reclinable 150°, apoyabrazos ajustable.</p>
+            <span class="precio" data-precio="154000">$154.000</span>
+          </div>
+
+          <button class="btn-agregar-carrito">
+            <i class="bi bi-cart-plus"></i> Agregar al carrito
+          </button>
+
+          <button class="btn-comprar">
+            <i class="bi bi-bag-check"></i> Comprar Ahora
+          </button>
+        </article>
+
+        <article class="producto-item">
+          <img src="Imagenes/Parlante Bluetooth JBL GO 3.jpg" alt="Parlante Bluetooth">
+          <div class="info">
+            <h3>Parlante Bluetooth JBL GO 3</h3>
+            <p>Resistencia al agua IP67, hasta 5h de batería.</p>
+            <span class="precio" data-precio="32500">$32.500</span>
+          </div>
+
+          <button class="btn-agregar-carrito">
+            <i class="bi bi-cart-plus"></i> Agregar al carrito
+          </button>
+
+          <button class="btn-comprar">
+            <i class="bi bi-bag-check"></i> Comprar Ahora
+          </button>
+        </article>
+
+        <article class="producto-item">
+          <img src="Imagenes/Smartwatch Xiaomi Redmi Watch 3.jpeg" alt="Smartwatch">
+          <div class="info">
+            <h3>Smartwatch Xiaomi Redmi Watch 3</h3>
+            <p>GPS integrado y pantalla AMOLED.</p>
+            <span class="precio" data-precio="62000">$62.000</span>
+
+          </div>
+          <button class="btn-agregar-carrito">
+            <i class="bi bi-cart-plus"></i> Agregar al carrito
+          </button>
+
+          <button class="btn-comprar">
+            <i class="bi bi-bag-check"></i> Comprar Ahora
+          </button>
+        </article>
+
+        <article class="producto-item">
+          <img src="Imagenes/Laptop HP 14” Ryzen 5 – 8GB RAM.jpg"
+            alt="HP 14-inch laptop with Ryzen 5 processor and 8GB RAM displayed open, showing the keyboard and screen against a neutral background">
+          <div class="info">
+            <h3>Laptop HP 14” Ryzen 5 8GB RAM</h3>
+            <p>Ideal para trabajo y estudio.</p>
+            <span class="precio" data-precio="610000">$610.000</span>
+          </div>
+
+          <button class="btn-agregar-carrito">
+            <i class="bi bi-cart-plus"></i> Agregar al carrito
+          </button>
+
+          <button class="btn-comprar">
+            <i class="bi bi-bag-check"></i> Comprar Ahora
+          </button>
+        </article>
+
+        <article class="producto-item">
+          <img src="Imagenes/Cámara de Seguridad WiFi 1080p.jpeg" alt="Cámara de seguridad">
+          <div class="info">
+            <h3>Cámara de Seguridad WiFi 1080p</h3>
+            <p>Visión nocturna y detección de movimiento.</p>
+            <span class="precio" data-precio="29900">$29.900</span>
+          </div>
+
+          <button class="btn-agregar-carrito">
+            <i class="bi bi-cart-plus"></i> Agregar al carrito
+          </button>
+
+          <button class="btn-comprar">
+            <i class="bi bi-bag-check"></i> Comprar Ahora
+          </button>
+        </article>
+
+        <article class="producto-item">
+          <img src="Imagenes/Cargador Rápido USB-C 25W Samsung.jpg" alt="Cargador Rápido">
+          <div class="info">
+            <h3>Cargador Rápido USB-C 25W Samsung</h3>
+            <p>Compatible con carga súper rápida.</p>
+            <span class="precio" data-precio="8500">$8.500</span>
+          </div>
+
+          <button class="btn-agregar-carrito">
+            <i class="bi bi-cart-plus"></i> Agregar al carrito
+          </button>
+
+          <button class="btn-comprar">
+            <i class="bi bi-bag-check"></i> Comprar Ahora
+          </button>
+        </article>
+
+      </section>
+
+
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2025 SmartShop. Todos los derechos reservados.</p>
+    <p>Av. Siempre Viva 742, Piso 2, CP 1264,Springfield, Oregon, USA.</p>
+  </footer>
+
+  <div id="modal-compra" class="modal">
+    <div class="modal-content">
+      <span class="cerrar">&times;</span>
+      <h3>Confirmar compra</h3>
+
+      <p id="nombreProducto"></p>
+      <p id="precioProducto"></p>
+
+      <label for="cantidad">Cantidad</label>
+      <input type="number" id="cantidad" min="1" value="1">
+
+      <label for="nombreComprador">Nombre del comprador</label>
+      <input type="text" id="nombreComprador" placeholder="Juan Pérez" required>
+
+      <label for="medioPago">Medio de pago</label>
+      <select id="medioPago" required>
+        <option value="">Seleccionar…</option>
+        <option value="mercadopago">Efectivo</option>
+        <option value="tarjeta">Tarjeta de crédito/débito</option>
+        <option value="transferencia">Transferencia bancaria</option>
+        <option value="mercadopago">Mercado Pago</option>
+      </select>
+
+      <label for="entrega">Entrega</label>
+      <select id="entrega" required>
+        <option value="local" selected>Retiro en el local</option>
+        <option value="envio">Envío a domicilio</option>
+      </select>
+
+      <!-- Dirección (oculta hasta elegir envío) -->
+      <div id="campoDireccion" style="display:none;">
+        <label for="direccion">Dirección de envío</label>
+        <input type="text" id="direccion" placeholder="Calle, número, ciudad">
+      </div>
+
+      <label for="comentarios">Comentarios / Observaciones</label>
+      <textarea id="comentarios" rows="3" placeholder="Ej: horario de entrega, referencias…"></textarea>
+
+      <div class="total-container">
+        <span>Total:</span>
+        <span id="totalCompra"></span>
+      </div>
+
+
+      <button class="btn-confirmar"> Confirmar Compra! </button>
+    </div>
+  </div>
+
+  <script src="comprar.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,196 @@
+/* ----- LISTADO DE PRODUCTOS ----- */
+
+.listado-productos {
+  width: 100%;
+  max-width: 900px;
+  margin: 30px auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.producto-item {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  background: #fff;
+  padding: 15px;
+  border-radius: 10px;
+  border: 1px solid #e2e2e2;
+  transition: box-shadow .2s ease, transform .2s ease;
+}
+
+.producto-item:hover {
+  box-shadow: 0 4px 12px rgba(0,0,0,.15);
+  transform: translateY(-2px);
+}
+
+.producto-item img {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.producto-item .info h3 {
+  margin-bottom: 5px;
+  font-size: 1.2rem;
+}
+
+.producto-item .precio {
+  color: green;
+  font-weight: 900;
+  display: block;
+  margin-top: 8px;
+}
+
+.producto-item .stock {
+  color: #666;
+  font-size: .9rem;
+}
+.producto-item {
+  position: relative;
+}
+
+.btn-agregar-carrito {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: #0087f5;
+  border: none;
+  color: #fff;
+  padding: 6px 8px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background .2s ease, transform .15s ease;
+}
+
+.btn-agregar-carrito:hover {
+  background: #005bb5;
+  transform: scale(1.08);
+}
+
+.btn-agregar-carrito:active {
+  transform: scale(0.95);
+}
+
+/* ----- BOTÓN COMPRAR ----- */
+.btn-comprar {
+  position: absolute;
+  top: 50px; /* debajo del de carrito */
+  right: 10px;
+  background: #0087f5;
+  border: none;
+  color: #fff;
+  padding: 6px 8px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background .2s ease, transform .15s ease;
+}
+
+.btn-comprar:hover {
+  background: #005bb5;
+  transform: scale(1.08);
+}
+
+.btn-comprar:active {
+  transform: scale(0.95);
+}
+
+/* ----- MODAL POPUP ----- */
+.modal {
+  display: none; /* se verá solo cuando lo activemos */
+  position: fixed;
+  inset: 0;
+  z-index: 999;
+  background: rgba(0,0,0,.50);
+  backdrop-filter: blur(2px);
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background: #fff;
+  width: 95%;
+  max-width: 450px;
+  padding: 20px;
+  border-radius: 10px;
+  position: relative;
+  animation: modalEntrada .25s ease;
+  box-shadow: 0 4px 20px rgba(0,0,0,.25);
+}
+
+@keyframes modalEntrada {
+  from {transform: scale(0.7); opacity: 0;}
+  to {transform: scale(1); opacity: 1;}
+}
+
+.cerrar {
+  position: absolute;
+  right: 15px;
+  top: 10px;
+  font-size: 1.6rem;
+  cursor: pointer;
+  font-weight: bold;
+  color: #333;
+}
+
+.modal-content label {
+  display: block;
+  margin-top: 12px;
+  font-weight: bold;
+  font-size: .95rem;
+  text-align: left;
+}
+
+.modal-content input,
+.modal-content select,
+.modal-content textarea {
+  width: 100%;
+  padding: 8px;
+  margin-top: 6px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: .95rem;
+  box-sizing: border-box;
+}
+
+
+
+.btn-confirmar {
+  background: #0087f5;
+  color: white;
+  border: none;
+  width: 100%;
+  padding: 10px;
+  border-radius: 6px;
+  margin-top: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background .20s, transform .15s;
+}
+
+.btn-confirmar:hover {
+  background: #005bb5;
+  transform: scale(1.03);
+}
+
+.total-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.5rem;       /* 🔥 Más grande que el resto */
+  font-weight: 900;
+  color: #0dbc45;          /* Verde fuerte */
+  margin: 15px 0;
+  border-top: 2px solid #ddd;
+  padding-top: 10px;
+}

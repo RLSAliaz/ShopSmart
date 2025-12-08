@@ -11,6 +11,7 @@
 .BotonesResponsive {
   display: none;
 }
+
 header {
   background: linear-gradient(to right, #0087f5, #005bb5, #0087f5);
   align-items: center;
@@ -38,9 +39,6 @@ header {
   width: 270px;
   height: auto;
   margin-right: 60px;
-  position: sticky;
-  top: 0;
-  z-index: 999;
 }
 
 /* #endregion*/
@@ -119,17 +117,15 @@ header {
 .opcionesUsuarioResponsive {
   display: none;
 }
+
 nav {
   grid-column: 1 / -1;
   grid-row: 3 / 4;
   display: flex;
   justify-content: center;
   align-self: end;
-  /* alinea el nav al borde inferior de la fila del grid */
   margin: 0;
-  /* elimina márgenes que puedan empujar hacia arriba */
   position: relative;
-  /* mantiene dentro del flujo del grid */
 }
 
 nav ul {
@@ -162,7 +158,7 @@ nav ul li a:hover {
   line-height: 1;
 }
 
-  .boton-carrito {
+.boton-carrito {
   position: relative;
   top: -5px;
   /* 5px más arriba */
@@ -385,7 +381,6 @@ footer {
     width: 100%;
     height: auto;
     margin-right: 60px;
-    position: sticky;
     top: 0;
     z-index: 999;
   }
@@ -393,13 +388,16 @@ footer {
   .opcionesUsuario {
     display: none;
   }
+
   .BotonesResponsive {
     display: flex;
     gap: 15px;
     justify-self: end;
     align-self: center;
   }
-  .menu-toggle,.carritoResponsive {
+
+  .menu-toggle,
+  .carritoResponsive {
     display: block;
     justify-self: end;
     align-self: center;
@@ -409,13 +407,16 @@ footer {
     cursor: pointer;
     font-size: 1.5rem;
   }
+
   .carritoResponsive {
-    margin-right:10px ;
+    margin-right: 10px;
   }
+
   .barraDeBusqueda {
     align-self: start;
     margin-top: 5px;
   }
+
   .barraDeBusqueda input[type="text"] {
     width: 100%;
     padding: 5px 8px;
@@ -423,6 +424,7 @@ footer {
     border-radius: 25px 0 0 25px;
     font-size: 0.95rem;
   }
+
   .menu-close {
     display: block;
     background: transparent;
@@ -434,36 +436,47 @@ footer {
     justify-self: end;
     margin-bottom: 20px;
   }
+
   .opcionesUsuarioResponsive {
     display: block;
   }
- nav {
+
+  nav {
     position: fixed;
     top: 0;
-    right: -40%;     /* oculto inicialmente */
+    right: -40%;
+    /* oculto inicialmente */
     width: 40%;
     height: 100%;
     background: linear-gradient(to bottom, #0087f5, #005bb5);
     padding: 20px;
-    box-shadow: -4px 0 10px rgba(0,0,0,0.4);
+    box-shadow: -4px 0 10px rgba(0, 0, 0, 0.4);
     display: flex;
     justify-content: flex-start;
     align-items: flex-start;
+    transition: right 0.3s ease;
+    z-index: 10000;
   }
+
+  nav.active {
+    right: 0;
+  }
+
   nav ul {
     list-style: none;
     display: flex;
     flex-direction: column;
-    gap: 25px;
     width: 100%;
     gap: 20px;
     margin: 0;
     padding: 0;
   }
-  nav ul li{
+
+  nav ul li {
     margin: 0;
     padding: 0;
   }
+
   .boton-carrito {
     display: none;
   }

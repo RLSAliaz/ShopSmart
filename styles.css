@@ -123,7 +123,7 @@ nav {
   grid-row: 3 / 4;
   display: flex;
   justify-content: center;
-  align-self: end;
+  align-self:  center;
   margin: 0;
   position: relative;
 }
@@ -148,79 +148,29 @@ nav ul li a:hover {
   transition: 0.3s ease;
 }
 
-.separador {
-  pointer-events: none;
-  color: rgba(255, 255, 255, 0.4);
-  font-weight: normal;
-  font-size: 18px;
-  text-shadow: 1px 0 1px rgba(0, 0, 0, 0.2),
-    -1px 0 1px rgba(0, 0, 0, 0.2);
-  line-height: 1;
-}
-
-.boton-carrito {
-  position: relative;
-  top: -5px;
-  /* 5px más arriba */
-  background-color: #005bb5;
-  /* color central del header */
-  border: 2px solid #ccc;
-  /* reborde blanco */
-  border-radius: 50%;
-  width: 45px;
-  height: 45px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.25);
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.boton-carrito i {
+/* Contenedor del link "Carrito" */
+.link-carrito {
+  display: inline-flex;
+  align-items: center;   /* 🔥 centra icono y texto en la misma línea */
+  gap: 6px;              /* espacio entre icono y texto */
   color: white;
-  /* icono blanco */
-  font-size: 25px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 18px;
 }
 
-/* Hover */
-.boton-carrito:hover {
-  transform: scale(1.1);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+/* Ícono del carrito */
+.link-carrito i {
+  font-size: 18px;
 }
 
-/* Tooltip */
-.boton-carrito .tooltip {
-  position: absolute;
-  bottom: -35px;
-  left: 50%;
-  transform: translateX(-50%);
-  background-color: #333;
-  color: #ccc;
-  font-size: 14px;
-  padding: 5px 10px;
-  border-radius: 6px;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.3s ease;
-  white-space: nowrap;
+/* Hover igual que el resto del menú */
+.link-carrito:hover {
+  color: #cce7ff;
+  text-shadow: 0 0 5px rgba(255, 255, 255, 0.6);
+  transform: scale(1.05);
+  transition: 0.3s ease;
 }
-
-.boton-carrito .tooltip::after {
-  content: "";
-  position: relative;
-  top: -10px;
-  left: 50%;
-  transform: translateX(-50%);
-  border-width: 5px;
-  border-style: solid;
-  border-color: transparent transparent #333 transparent;
-}
-
-.boton-carrito:hover .tooltip {
-  opacity: 1;
-}
-
 /*#endregion*/
 /* #endregion */
 /* #region MAIN */
@@ -253,6 +203,7 @@ main {
   width: 100%;
   border-radius: 10px;
 }
+
 
 /* ==========================
    VENTANA DE PRODUCTOS

@@ -10,21 +10,23 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="carrito.css">
+
 
 </head>
 
 <body>
 
-  <!-- CABECERA --> 
+  <!-- CABECERA -->
   <header>
     <div class="header-container">
 
       <a href="Index.html">
         <img src="Imagenes/LogoSmartShop.png" alt="Logo" class="logo">
       </a>
-      
-    
-      <div class="BotonesResponsive"> 
+
+
+      <div class="BotonesResponsive">
         <!-- BOTÓN DEL CARRITO RESPONSIVE -->
         <button id="boton-carrito-Responsive" class="carritoResponsive"><i class="bi bi-cart2"></i></i></button>
         <!-- BOTÓN DEL MENÚ RESPONSIVE -->
@@ -35,7 +37,6 @@
       <ul class="opcionesUsuario">
         <li><a href="session.html">Ingresar</a></li>
         <li>
-          <p class="separador">|</p>
         </li>
         <li><a href="register.html">Registrarse</a></li>
       </ul>
@@ -46,25 +47,24 @@
       </form>
 
       <nav>
-         <ul>
-          <button id="boton-close-menu" class="menu-close BotonesResponsive"><i class="bi bi-arrow-bar-right"></i></button>
-          <li class="opcionesUsuarioResponsive" ><a href="session.html">Ingresar</a></li>
-          <li class="opcionesUsuarioResponsive" ><a href="register.html">Registrarse</a></li>
-          <li><a href="#">Ofertas</a></li>
-          <li><a href="#" class="separador">|</a></li>
+        <ul>
+          <button id="boton-close-menu" class="menu-close BotonesResponsive"><i
+              class="bi bi-arrow-bar-right"></i></button>
+          <li class="opcionesUsuarioResponsive"><a href="session.html">Ingresar</a></li>
+          <li class="opcionesUsuarioResponsive"><a href="register.html">Registrarse</a></li>
+          <li><a href="productos.html">Ofertas</a></li>
           <li><a href="productos.html">Productos</a></li>
-          <li><a href="#" class="separador">|</a></li>
-
-          <!-- BOTÓN DEL CARRITO -->
-          <li class="boton-carrito">
-            <i class="bi bi-cart2"></i>
-            <span class="tooltip">Mi carrito</span>
+          <li class="item-carrito">
+            <a href="productos.html" class="link-carrito">
+              <i class="bi bi-cart-fill"></i>
+              Carrito
+            </a>
           </li>
 
-          <li><a href="#" class="separador">|</a></li>
-          <li><a href="#">Sucursales</a></li>
-          <li><a href="#" class="separador">|</a></li>
-          <li><a href="#">Contactanos</a></li>
+
+          <li><a href="sucursales.html">Sucursales</a></li>
+
+          <li><a href="Contactanos.html">Contactanos</a></li>
         </ul>
       </nav>
 
@@ -146,7 +146,8 @@
     <p>Av. Siempre Viva 742, Piso 2, CP 1264,Springfield, Oregon, USA.</p>
   </footer>
 
-<script src="index.js"></script>
+  <script src="index.js"></script>
+  <script src="carrito.js" defer></script>
 
 </body>
 

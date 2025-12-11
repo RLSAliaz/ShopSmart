@@ -11,6 +11,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="productos.css">
+  <link rel="stylesheet" href="carrito.css">
+
 
 </head>
 
@@ -36,7 +38,6 @@
       <ul class="opcionesUsuario">
         <li><a href="session.html">Ingresar</a></li>
         <li>
-          <p class="separador">|</p>
         </li>
         <li><a href="register.html">Registrarse</a></li>
       </ul>
@@ -48,29 +49,29 @@
 
       <nav>
         <ul>
-          <button id="boton-menu" class="menu-close BotonesResponsive">X</button>
+          <button id="boton-close-menu" class="menu-close BotonesResponsive"><i
+              class="bi bi-arrow-bar-right"></i></button>
           <li class="opcionesUsuarioResponsive"><a href="session.html">Ingresar</a></li>
           <li class="opcionesUsuarioResponsive"><a href="register.html">Registrarse</a></li>
-          <li><a href="#">Ofertas</a></li>
-          <li><a href="#" class="separador">|</a></li>
+          <li><a href="productos.html">Ofertas</a></li>
           <li><a href="productos.html">Productos</a></li>
-          <li><a href="#" class="separador">|</a></li>
-
-          <!-- BOTÓN DEL CARRITO -->
-          <li class="boton-carrito">
-            <i class="bi bi-cart2"></i>
-            <span class="tooltip">Mi carrito</span>
+          <li class="item-carrito">
+            <a href="productos.html" class="link-carrito">
+              <i class="bi bi-cart-fill"></i>
+              Carrito
+            </a>
           </li>
 
-          <li><a href="#" class="separador">|</a></li>
-          <li><a href="#">Sucursales</a></li>
-          <li><a href="#" class="separador">|</a></li>
-          <li><a href="#">Contactanos</a></li>
+
+          <li><a href="sucursales.html">Sucursales</a></li>
+
+          <li><a href="Contactanos.html">Contactanos</a></li>
         </ul>
       </nav>
 
     </div>
   </header>
+
 
 
   <main>
@@ -309,9 +310,78 @@
       <button class="btn-confirmar"> Confirmar Compra! </button>
     </div>
   </div>
+  <script></script>
 
+  <!-- MODAL DEL CARRITO -->
+  <div id="modal-carrito" class="modal">
+    <div class="modal-content">
+
+      <span id="cerrar-modal" class="btn-cerrar">&times;</span>
+      <h2>Tu Carrito</h2>
+
+      <table class="tabla-carrito">
+        <thead>
+          <tr>
+            <th>Producto</th>
+            <th>Cant.</th>
+            <th>Precio</th>
+            <th>Eliminar</th> <!-- 🔥 NUEVA COLUMNA -->
+
+          </tr>
+        </thead>
+        <tbody id="tbody-carrito">
+          <!-- Se rellenará desde JS -->
+        </tbody>
+      </table>
+
+      <div id="checkout-contenido" style="margin-top:15px;">
+
+        <h3>Datos para la compra</h3>
+
+        <label>Nombre y apellido</label>
+        <input type="text" id="nombreUsuario" placeholder="Ejemplo: Juan Pérez">
+
+        <label>Medio de pago</label>
+        <select id="medioPagoCheckout">
+          <option value="">Seleccionar…</option>
+          <option value="efectivo">Efectivo</option>
+          <option value="tarjeta">Tarjeta de crédito/débito</option>
+          <option value="transferencia">Transferencia bancaria</option>
+          <option value="mercadopago">Mercado Pago</option>
+        </select>
+
+        <label>Entrega</label>
+        <select id="tipoEntrega">
+          <option value="retiro" selected>Retiro en el local</option>
+          <option value="envio">Envío a domicilio</option>
+        </select>
+        <div id="campoDireccionCheckout" style="display:none;">
+          <label for="direccionCheckout">Dirección de envío</label>
+          <input type="text" id="direccionCheckout" placeholder="Calle, número, ciudad">
+        </div>
+
+        <div id="campoDireccionCheckout" style="display:none;">
+          <label>Dirección</label>
+          <input type="text" id="direccionCheckout" placeholder="Calle, número, ciudad">
+        </div>
+
+        <div class="total-container">
+          <span>Total:</span>
+          <span id="totalCarrito" style="font-weight:bold;"></span>
+        </div>
+
+      </div>
+
+      <button id="btn-confirmar-compra" class="btn-continuar">
+        Confirmar compra
+      </button>
+
+
+
+    </div>
+  </div>
   <script src="comprar.js"></script>
-
+  <script src="carrito.js"></script>
 </body>
 
 </html>

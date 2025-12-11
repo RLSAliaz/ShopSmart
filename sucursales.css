@@ -1,11 +1,7 @@
 /* Contenedor del mapa */
-html, body {
-  height: 100%;
-}
-body {
-  display: flex;
-  flex-direction: column;
-}
+
+/* MAIN ajustado al alto de la pantalla */
+
 
 .mapa-container {
   width: 100%;
@@ -16,15 +12,9 @@ body {
   box-shadow: 0 3px 10px rgba(0,0,0,0.25);
 }
 
-main{
-    min-height: 0vh;   ;
-}
-footer{
- min-height: 200px;
-}
 .contenedor-sucursal {
   max-width: 1200px;
-  height: auto;
+  
   width: 100%;
   justify-self: center;
   background-color: white;
@@ -32,4 +22,50 @@ footer{
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   padding: 20px;
+}
+
+/* 🎯 Ajuste exclusivo para la página de sucursales */
+main.contenedor {
+    padding: 20px;
+    min-height: auto !important;   /* 🔥 anula los 1000px */
+    display: block !important;      /* 🔥 anula el display flexbox roto */
+    background-color: #ebebeb;      
+}
+
+/* Asegura que el bloque de sucursal se adapte al contenido */
+.contenedor-sucursal {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Ajuste del mapa para que nunca deje espacio en blanco */
+.mapa-container iframe {
+    width: 100%;
+    height: 450px;
+    border: 0;
+    display: block;
+}
+
+/* --- Ajuste del layout SOLO para sucursales --- */
+html, body {
+    height: 100%;
+}
+
+/* Forzar al body a usar flexbox para empujar el footer abajo */
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+/* El main crece para ocupar el espacio disponible */
+main.contenedor {
+    flex: 1;                    /* 🔥 ocupa el espacio libre */
+    margin-bottom: 0;
+}
+
+/* Footer siempre al final */
+footer {
+    margin-top: auto;           /* 🔥 empuja el footer al fondo */
+    width: 100%;
 }

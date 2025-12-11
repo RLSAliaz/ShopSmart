@@ -3,6 +3,7 @@ const modalCarrito = document.getElementById("modal-carrito");
 const botonCarrito = document.querySelector(".item-carrito .link-carrito");
 const botonCerrar = document.getElementById("cerrar-modal");
 
+
 // Abrir modal al hacer clic en el botón del carrito
 botonCarrito.addEventListener("click", (e) => {
     e.preventDefault();        // evita que navegue a productos.html
@@ -11,6 +12,9 @@ botonCarrito.addEventListener("click", (e) => {
 
     modalCarrito.style.display = "flex";
 });
+// Botón de carrito responsive (mobile)
+
+
 
 // Cerrar modal al tocar la X
 botonCerrar.addEventListener("click", () => {
@@ -124,6 +128,7 @@ function actualizarListenersCarrito() {
           carrito.splice(idx, 1);
         }
       }
+
 
       localStorage.setItem("carrito", JSON.stringify(carrito));
 

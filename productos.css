@@ -198,17 +198,6 @@
 
 /* ----- TABLA CARRITO EN MODAL ----- */
 /* Modal */
-.modal {
-  display: active; /* Oculto por defecto */
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0,0,0,0.5); /* fondo oscuro */
-  justify-content: center;
-  align-items: center;
-}
 
 /* Contenedor del contenido del modal */
 .modal-content {
@@ -262,69 +251,53 @@
   background-color: #006ac2;
 }
 
+@media (max-width: 600px) {
+  .producto-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 
-/* ----- TABLA CARRITO EN MODAL ----- */
-/* Modal */
-.modal {
-  display: active; /* Oculto por defecto */
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0,0,0,0.5); /* fondo oscuro */
-  justify-content: center;
-  align-items: center;
+  .producto-item img {
+    width: 100%;
+    height: auto;
+  }
 }
 
-/* Contenedor del contenido del modal */
-.modal-content {
-  background: #fff;
-  padding: 20px;
-  width: 90%;
-  max-width: 450px;
-  border-radius: 10px;
-  animation: aparecer 0.2s ease-out;
-}
+/* ============================================
+   🔥 MODO MOBILE - SOLO < 600px
+   ============================================ */
+@media (max-width: 600px) {
 
-/* Botón cerrar (la X) */
-.btn-cerrar {
-  float: right;
-  cursor: pointer;
-  font-size: 22px;
-}
+  /* La card se adapta */
+  .producto-item {
+    flex-direction: column;
+    align-items: flex-start;
+    padding-bottom: 70px; /* espacio para los botones abajo */
+  }
 
-/* Tabla */
-.tabla-carrito {
-  width: 100%;
-  text-align: center;
-  margin-top: 10px;
-  border-collapse: collapse;
-}
+  /* Imagen ocupa todo el ancho */
+  .producto-item img {
+    width: 100%;
+    height: auto;
+  }
 
-.tabla-carrito th, .tabla-carrito td {
-  padding: 8px;
-  border-bottom: 1px solid #ddd;
-}
+  /* 🔥 Botones en mobile: dejan de ser absolute */
+  .producto-item .btn-agregar-carrito,
+  .producto-item .btn-comprar {
+    position: static !important; /* ✔ desactiva absolute sin afectar desktop */
+    width: 48%;
+    margin: 0;
+  }
 
-@keyframes aparecer {
-  from { transform: scale(0.9); opacity: 0; }
-  to   { transform: scale(1); opacity: 1; }
-}
- 
-.btn-continuar {
-  margin-top: 15px;
-  padding: 10px 20px;
-  width: 100%;
-  background-color: #0087f5;
-  color: white;
-  font-weight: bold;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  font-size: 16px;
-}
-
-.btn-continuar:hover {
-  background-color: #006ac2;
-}
+  /* 🔥 Contenedor de botones en mobile */
+  .producto-item .botonera-mobile {
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 10px;
+    gap: 10px;
+  }
+} 

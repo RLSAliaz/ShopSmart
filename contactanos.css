@@ -1,11 +1,4 @@
 /* =============== FORMULARIO CONTACTO =============== */
-html, body {
-  height: 100%;
-}
-body {
-  display: flex;
-  flex-direction: column;
-}
 .ventanaDeProductos {
   max-height: 600px;
 }
@@ -14,9 +7,6 @@ body {
   display: flex;
   justify-content: center;
   padding: 20px;
-}
-main{
-    flex: 1 ;
 }
 
 .formulario-contacto {
@@ -112,4 +102,38 @@ main{
 
 footer{
  min-height: 200px;
+}
+
+
+/* ========== FIX FOOTER PEGADO ABAJO (solo para Contactanos) ========== */
+
+/* Fuerza al documento a ocupar el alto total */
+html, body {
+    height: 100%;
+}
+
+/* El body se convierte en un contenedor flex vertical */
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+/* El footer queda siempre debajo */
+footer {
+    margin-top: auto;    /* 🔥 Garantiza que se pegue abajo */
+    width: 100%;
+}
+/* ✔ Contenedor del main ajustado al contenido SOLO PARA SUCURSALES */
+.contenedor {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    margin: 20px auto;
+    width: 100%;
+    max-width: 1200px;
+    min-height: auto;
+    /* 🔥 Ajuste de altura correcto */
+    display: block;          /* deja que crezca según contenido */
+    height: auto;            /* se adapta al contenido */
 }

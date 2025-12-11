@@ -100,3 +100,4 @@ document.querySelector(".btn-confirmar").addEventListener("click", () => {
   alert("¡Compra registrada con éxito! 🛍️");
   modal.style.display = "none";
 });
+

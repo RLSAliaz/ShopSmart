@@ -9,8 +9,24 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="productos.css">
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="carrito.css">
+
+  <!-- META DE PRODUCTOS SMARTSHOP -->
+<meta name="description" content="
+Smartwatch Xiaomi Redmi Watch 3 con GPS y pantalla AMOLED.
+Laptop HP 14 con procesador Ryzen 5 y 8GB de RAM.
+Cámara de Seguridad WiFi 1080p con visión nocturna.
+Cargador Rápido USB-C Samsung de 25W compatible con carga súper rápida.
+">
+
+<meta name="keywords" content="
+smartwatch, xiaomi, redmi watch 3, reloj inteligente, amoled, gps,
+laptop hp, hp 14, ryzen 5, notebook, computadoras,
+cámara seguridad, wifi 1080p, vigilancia, visión nocturna,
+cargador samsung, usb c, carga rápida, 25w
+">
 
 
 </head>
@@ -27,8 +43,6 @@
 
 
       <div class="BotonesResponsive">
-        <!-- BOTÓN DEL CARRITO RESPONSIVE -->
-        <button id="boton-carrito-Responsive" class="carritoResponsive"><i class="bi bi-cart2"></i></i></button>
         <!-- BOTÓN DEL MENÚ RESPONSIVE -->
         <button id="boton-menu" class="menu-toggle"><i class="bi bi-justify"></i></i></i></button>
       </div>
@@ -80,64 +94,68 @@
     <section class="ventanaDeProductos">
       <h2 class="tituloProductos">Nuevos productos!</h2>
 
-      <div class="gridProductos">
-        <div class="producto">
-          <img src="Imagenes/producto 1.jpg" alt="Producto 1">
-          <h3>Producto 1</h3>
-          <p>$15.000</p>
-          <div class="estrellas">★★★★★</div>
+      <article class="producto-item">
+        <img src="Imagenes/Smartwatch Xiaomi Redmi Watch 3.jpeg" alt="Smartwatch">
+        <div class="info">
+          <h3>Smartwatch Xiaomi Redmi Watch 3</h3>
+          <p>GPS integrado y pantalla AMOLED.</p>
+          <span class="precio" data-precio="62000">$62.000</span>
         </div>
 
-        <div class="producto">
-          <img src="Imagenes/producto 2.jpg" alt="Producto 2">
-          <h3>Producto 2</h3>
-          <p>$21.000</p>
-          <div class="estrellas">★★★★☆</div>
+        <div class="botonera-mobile">
+          <button class="btn-agregar-carrito">
+            <i class="bi bi-cart-plus"></i> Agregar al carrito
+          </button>
+
+          <button class="btn-comprar">
+            <i class="bi bi-bag-check"></i> Comprar Ahora
+          </button>
+        </div>
+      </article>
+
+      <article class="producto-item">
+        <img src="Imagenes/Laptop HP 14” Ryzen 5 – 8GB RAM.jpg" alt="Laptop HP 14 Ryzen 5 8GB RAM">
+        <div class="info">
+          <h3>Laptop HP 14” Ryzen 5 8GB RAM</h3>
+          <p>Ideal para trabajo y estudio.</p>
+          <span class="precio" data-precio="610000">$610.000</span>
         </div>
 
-        <div class="producto">
-          <img src="Imagenes/producto 3.jpg" alt="Producto 3">
-          <h3>Producto 3</h3>
-          <p>$9.500</p>
-          <div class="estrellas">★★★☆☆</div>
+        <div class="botonera-mobile">
+          <button class="btn-agregar-carrito">
+            <i class="bi bi-cart-plus"></i> Agregar al carrito
+          </button>
+
+          <button class="btn-comprar">
+            <i class="bi bi-bag-check"></i> Comprar Ahora
+          </button>
+        </div>
+      </article>
+
+      <article class="producto-item">
+        <img src="Imagenes/Cámara de Seguridad WiFi 1080p.jpeg" alt="Cámara de seguridad">
+        <div class="info">
+          <h3>Cámara de Seguridad WiFi 1080p</h3>
+          <p>Visión nocturna y detección de movimiento.</p>
+          <span class="precio" data-precio="29900">$29.900</span>
         </div>
 
-        <div class="producto">
-          <img src="Imagenes/producto 4.jpg" alt="Producto 4">
-          <h3>Producto 4</h3>
-          <p>$17.200</p>
-          <div class="estrellas">★★★★★</div>
-        </div>
+        <div class="botonera-mobile">
+          <button class="btn-agregar-carrito">
+            <i class="bi bi-cart-plus"></i> Agregar al carrito
+          </button>
 
-        <div class="producto">
-          <img src="Imagenes/producto 5.jpg" alt="Producto 5">
-          <h3>Producto 5</h3>
-          <p>$13.800</p>
-          <div class="estrellas">★★★★☆</div>
+          <button class="btn-comprar">
+            <i class="bi bi-bag-check"></i> Comprar Ahora
+          </button>
         </div>
-
-        <div class="producto">
-          <img src="Imagenes/producto 6.jpg" alt="Producto 6">
-          <h3>Producto 6</h3>
-          <p>$22.300</p>
-          <div class="estrellas">★★★★★</div>
-        </div>
-
-        <div class="producto">
-          <img src="Imagenes/producto 7.jpg" alt="Producto 7">
-          <h3>Producto 7</h3>
-          <p>$11.000</p>
-          <div class="estrellas">★★★☆☆</div>
-        </div>
-
-        <div class="producto">
-          <img src="Imagenes/producto 8.avif" alt="Producto 8">
-          <h3>Producto 8</h3>
-          <p>$16.900</p>
-          <div class="estrellas">★★★★☆</div>
-        </div>
+      </article>
       </div>
+      <a href="productos.html" class="btn-ver-mas">
+        Ver más productos →
+      </a>
     </section>
+
   </main>
 
   <!-- FOOTER -->
@@ -146,8 +164,129 @@
     <p>Av. Siempre Viva 742, Piso 2, CP 1264,Springfield, Oregon, USA.</p>
   </footer>
 
+  <!-- boton de compra y de carrito. -->
+
+  <div id="modal-compra" class="modal">
+    <div class="modal-content">
+      <span class="cerrar">&times;</span>
+      <h3>Confirmar compra</h3>
+
+      <p id="nombreProducto"></p>
+      <p id="precioProducto"></p>
+
+      <label for="cantidad">Cantidad</label>
+      <input type="number" id="cantidad" min="1" value="1">
+
+      <label for="nombreComprador">Nombre del comprador</label>
+      <input type="text" id="nombreComprador" placeholder="Juan Pérez" required>
+
+      <label for="medioPago">Medio de pago</label>
+      <select id="medioPago" required>
+        <option value="">Seleccionar…</option>
+        <option value="mercadopago">Efectivo</option>
+        <option value="tarjeta">Tarjeta de crédito/débito</option>
+        <option value="transferencia">Transferencia bancaria</option>
+        <option value="mercadopago">Mercado Pago</option>
+      </select>
+
+      <label for="entrega">Entrega</label>
+      <select id="entrega" required>
+        <option value="local" selected>Retiro en el local</option>
+        <option value="envio">Envío a domicilio</option>
+      </select>
+
+      <!-- Dirección (oculta hasta elegir envío) -->
+      <div id="campoDireccion" style="display:none;">
+        <label for="direccion">Dirección de envío</label>
+        <input type="text" id="direccion" placeholder="Calle, número, ciudad">
+      </div>
+
+      <label for="comentarios">Comentarios / Observaciones</label>
+      <textarea id="comentarios" rows="3" placeholder="Ej: horario de entrega, referencias…"></textarea>
+
+      <div class="total-container">
+        <span>Total:</span>
+        <span id="totalCompra"></span>
+      </div>
+
+
+      <button class="btn-confirmar"> Confirmar Compra! </button>
+    </div>
+  </div>
+  <script></script>
+
+  <!-- MODAL DEL CARRITO -->
+  <div id="modal-carrito" class="modal">
+    <div class="modal-content">
+
+      <span id="cerrar-modal" class="btn-cerrar">&times;</span>
+      <h2>Tu Carrito</h2>
+
+      <table class="tabla-carrito">
+        <thead>
+          <tr>
+            <th>Producto</th>
+            <th>Cant.</th>
+            <th>Precio</th>
+            <th>Eliminar</th> <!-- 🔥 NUEVA COLUMNA -->
+
+          </tr>
+        </thead>
+        <tbody id="tbody-carrito">
+          <!-- Se rellenará desde JS -->
+        </tbody>
+      </table>
+
+      <div id="checkout-contenido" style="margin-top:15px;">
+
+        <h3>Datos para la compra</h3>
+
+        <label>Nombre y apellido</label>
+        <input type="text" id="nombreUsuario" placeholder="Ejemplo: Juan Pérez">
+
+        <label>Medio de pago</label>
+        <select id="medioPagoCheckout">
+          <option value="">Seleccionar…</option>
+          <option value="efectivo">Efectivo</option>
+          <option value="tarjeta">Tarjeta de crédito/débito</option>
+          <option value="transferencia">Transferencia bancaria</option>
+          <option value="mercadopago">Mercado Pago</option>
+        </select>
+
+        <label>Entrega</label>
+        <select id="tipoEntrega">
+          <option value="retiro" selected>Retiro en el local</option>
+          <option value="envio">Envío a domicilio</option>
+        </select>
+        <div id="campoDireccionCheckout" style="display:none;">
+          <label for="direccionCheckout">Dirección de envío</label>
+          <input type="text" id="direccionCheckout" placeholder="Calle, número, ciudad">
+        </div>
+
+        <div id="campoDireccionCheckout" style="display:none;">
+          <label>Dirección</label>
+          <input type="text" id="direccionCheckout" placeholder="Calle, número, ciudad">
+        </div>
+
+        <div class="total-container">
+          <span>Total:</span>
+          <span id="totalCarrito" style="font-weight:bold;"></span>
+        </div>
+
+      </div>
+
+      <button id="btn-confirmar-compra" class="btn-continuar">
+        Confirmar compra
+      </button>
+
+
+
+    </div>
+  </div>
+  <script src="carrito.js"></script>
   <script src="index.js"></script>
-  <script src="carrito.js" defer></script>
+  <script src="comprar.js"></script>
+
 
 </body>
 

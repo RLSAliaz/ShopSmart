@@ -138,6 +138,9 @@ function actualizarListenersCarrito() {
 }
 
 
+function cantidadTotalDeArticulos() {
+  return carrito.reduce((total, item) => total + item.cantidad, 0);
+}
 
 //FUNCION PARA BORRAR ITEMS DEL CARRITO
 function eliminarProducto(indice) {
@@ -151,9 +154,20 @@ function calcularTotalCarrito() {
     return carrito.reduce((acc, item) => acc + (item.precio * item.cantidad), 0);
 }
 
+function actualizarTotalArticulos() {
+  const total = cantidadTotalDeArticulos();
+
+  document.getElementById("cantidadArticulos").textContent =
+    `Cantidad total de artículos: ${total}`;
+
+  document.getElementById("totalArticulos").textContent =
+    total === 1 ? "1 artículo" : `${total} artículos`;
+}
+
 function actualizarTotalCarrito() {
     const total = carrito.reduce((acc, item) => acc + item.precio * item.cantidad, 0);
     document.getElementById("totalCarrito").textContent = "$" + total;
+    actualizarTotalArticulos()
 }
 
 

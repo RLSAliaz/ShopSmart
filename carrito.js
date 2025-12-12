@@ -54,14 +54,20 @@ function agregarProductoDesdeCard(card) {
     alert(`✔ Producto "${nombre}" agregado al carrito con éxito`);
 }
 
-// listeners para botones de agregar al carrito
-const botonesAgregar = document.querySelectorAll(".btn-agregar-carrito");
 
-botonesAgregar.forEach(boton => {
-    boton.addEventListener("click", () => {
-        const card = boton.closest(".producto-item");
-        agregarProductoDesdeCard(card);
-    });
+document.addEventListener("click", () => {
+  console.log("📌 click detectado en el documento");
+});
+
+// listeners para botones de agregar al carrito
+document.addEventListener("click", (e) => {
+
+  const botonAgregar = e.target.closest(".btn-agregar-carrito");
+  if (!botonAgregar) return;
+
+  const card = botonAgregar.closest(".producto-item");
+  agregarProductoDesdeCard(card);
+
 });
 
 function renderCarrito() {

@@ -5,14 +5,17 @@ const btnComprarList = document.querySelectorAll(".btn-comprar");
 const nombreProductoElem = document.getElementById("nombreProducto");
 const precioProductoElem = document.getElementById("precioProducto");
 
-const radiosEntrega = document.querySelectorAll('input[name="entrega"]');
-const campoDireccion = document.getElementById('campoDireccion');
 
 //Mostrar campo dirección SOLO si selecciona envío
-radiosEntrega.forEach(radio => {
-  radio.addEventListener('change', () => {
-    campoDireccion.style.display = (radio.value === "envio") ? "block" : "none";
-  });
+const selectEntrega = document.getElementById("entrega");
+const campoDireccion = document.getElementById("campoDireccion");
+
+selectEntrega.addEventListener("change", () => {
+  if (selectEntrega.value === "envio") {
+    campoDireccion.style.display = "block";
+  } else {
+    campoDireccion.style.display = "none";
+  }
 });
 
 //Abre el modal con datos del producto
@@ -40,30 +43,41 @@ window.addEventListener('click', (e) => {
 });
 
 //Botón "Comprar Ahora" — Abre el modal con datos del producto
-btnComprarList.forEach(boton => {
-  boton.addEventListener('click', () => {
-    const card = boton.closest(".producto-item");
-    const nombre = card.querySelector("h3").textContent;
+document.addEventListener("click", (e) => {
 
-    const precioCrudo = parseFloat(
-      card.querySelector(".precio").dataset.precio
-    );
-    // Mostrar en el modal
-    nombreProductoElem.textContent = `Producto: ${nombre}`;
-    precioProductoElem.textContent = `Precio: $${precioNumerico.toLocaleString('es-AR')}`;
+  const botonComprar = e.target.closest(".btn-comprar");
+  if (!botonComprar) return;
 
-    // Guardar el precio real dentro del elemento para el cálculo
-    precioProductoElem.dataset.valor = precioNumerico;
+  const card = botonComprar.closest(".producto-item");
 
-    // Reset cantidad
-    cantidadInput.value = 1;
+  // Nombre COMPLETO (no truncado)
+  const nombre = card.querySelector(".product-full-title")
+    ? card.querySelector(".product-full-title").textContent.trim()
+    : card.querySelector("h3").textContent.trim();
 
-    // Calcular TOTAL al abrir
-    actualizarPrecioFinal();
+  // Precio crudo real
+  const precioCrudo = parseFloat(
+    card.querySelector(".precio").dataset.precio
+  );
 
-    modal.style.display = "flex";
-  });
+  // Mostrar en el modal
+  nombreProductoElem.textContent = `Producto: ${nombre}`;
+  precioProductoElem.textContent =
+    `Precio: $${precioCrudo.toLocaleString("es-AR")}`;
+
+  // Guardar precio para cálculos
+  precioPorUnidad = precioCrudo;
+
+  // Reset cantidad
+  cantidadInput.value = 1;
+
+  // Calcular total inicial
+  calcularTotal(precioPorUnidad);
+
+  // Abrir modal
+  modal.style.display = "flex";
 });
+
 
 // Variables globales
 const cantidadInput = document.getElementById("cantidad");
@@ -97,7 +111,36 @@ cantidadInput.addEventListener("input", () => {
   calcularTotal(precioPorUnidad);
 });   
 document.querySelector(".btn-confirmar").addEventListener("click", () => {
-  alert("¡Compra registrada con éxito! 🛍️");
+
+  const nombre = document.getElementById("nombreComprador").value.trim();
+  const medioPago = document.getElementById("medioPago").value;
+  const tipoEntrega = document.getElementById("entrega").value;
+  const direccion = document.getElementById("direccion").value.trim();
+  const cantidad = parseInt(document.getElementById("cantidad").value);
+
+  // VALIDACIONES
+  if (!nombre) {
+    alert("⚠ Por favor ingresá el nombre del comprador.");
+    return;
+  }
+
+  if (!medioPago) {
+    alert("⚠ Por favor seleccioná un medio de pago.");
+    return;
+  }
+
+  if (tipoEntrega === "envio" && !direccion) {
+    alert("⚠ Por favor ingresá la dirección de envío.");
+    return;
+  }
+
+  if (isNaN(cantidad) || cantidad <= 0) {
+    alert("⚠ La cantidad ingresada no es válida.");
+    return;
+  }
+
+  // TODO OK
+  alert("✔ Compra confirmada con éxito! 🛍️");
+
   modal.style.display = "none";
 });
-

@@ -16,8 +16,9 @@ PRODUCTOS
   +productos css
 
 AGREGAR PRODUCTOS
-+agregarProductos html estructura general que contiene el formulario de agregado de productos nuevos, junto con la posibilidad de arrastrar y soltar imágenes
-no tenemos base de datos por lo tanto los datos por el momento no son almacenados pero es una funcionalidad útil para mantener la pagina actualizada.
++agregarProductos html estructura general que contiene el formulario de agregado de productos nuevos, junto con la posibilidad de arrastrar y soltar 
+imágenes no tenemos base de datos por lo tanto los datos por el momento no son almacenados pero es una funcionalidad útil para mantener la pagina 
+actualizada.
 +agregarProductos js encontramos las funciones relacionadas con la carga de datos en el fornmulario de agregar productos. 
 +agregarProductos css en esta pagina tenemos los ajustes pertinentes a la pagina asi tambien como el estilo aplicado al formulario. 
 
@@ -33,7 +34,8 @@ Aquí por medio de un iframe insertamoas un mapa para poder posteriormente ingre
 
 CONTACTANOS 
 contactanos html y contactanos css son los archivos que dan forma a la seccion de contactanos, en donde los clientes tienen la posibilidad de ingresar 
-sus datos y dejarnos un mensaje o consulta para que luego pueda ser respondida por nuestro equipo via e-mail. 
+sus datos y dejarnos un mensaje o consulta para que luego pueda ser respondida por nuestro equipo via e-mail, todo esto utilizando un formulario 
+provisto por la aplicacion formspree. 
 
 COMPRA 
 compra js este archivo es fundamental, ya que regula el comportamiento del modal compra, que es el que se encarga de la captura de datos y simulacion de 
@@ -47,5 +49,5 @@ tambien podemos controlar la cantidad de productos y cuales eliminar o aumentar 
 en efectivo y también es el que se encarga de realizar las comprobaciones correspondientes para evitar que se realicen compras sin controlar los datos. 
 
 
-CARRITO
+
 

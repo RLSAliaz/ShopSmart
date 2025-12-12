@@ -10,14 +10,15 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="carrito.css">
     <link rel="stylesheet" href="Contactanos.css">
+    <link rel="stylesheet" href="productos.css">
+    <link rel="stylesheet" href="carrito.css">
+
+
 
 
 </head>
-
 <body>
-
     <header>
         <div class="header-container">
 
@@ -70,44 +71,42 @@
     </header>
 
 
-    
-    
-<main class="contenedor">
 
-  <div class="ventanaDeProductos formulario-contacto">
-    <h2>Contactanos</h2>
-    <p>Dejanos tus datos y tu consulta. ¡Nos pondremos en contacto a la brevedad!</p>
+    <main class="contenedor">
 
- <form id="form-contacto"
-      action="https://formspree.io/f/xwpgronl"
-      method="POST">
+        <div class="ventanaDeProductos formulario-contacto">
+            <h2>Contactanos</h2>
+            <p>Dejanos tus datos y tu consulta. ¡Nos pondremos en contacto a la brevedad!</p>
 
-  <div class="grupo-input">
-    <label for="nombre">Nombre</label>
-    <input type="text" id="nombre" name="nombre" placeholder="Juan" required>
-  </div>
+            <form id="form-contacto" action="https://formspree.io/f/xwpgronl" method="POST">
 
-  <div class="grupo-input">
-    <label for="apellido">Apellido</label>
-    <input type="text" id="apellido" name="apellido" placeholder="Pérez" required>
-  </div>
+                <div class="grupo-input">
+                    <label for="nombre">Nombre</label>
+                    <input type="text" id="nombre" name="nombre" placeholder="Juan" required>
+                </div>
 
-  <div class="grupo-input">
-    <label for="email">Correo electrónico</label>
-    <input type="email" id="email" name="email" placeholder="ejemplo@mail.com" required>
-  </div>
+                <div class="grupo-input">
+                    <label for="apellido">Apellido</label>
+                    <input type="text" id="apellido" name="apellido" placeholder="Pérez" required>
+                </div>
 
-  <div class="grupo-input">
-    <label for="consulta">Consulta / Observación</label>
-    <textarea id="consulta" name="message" rows="5" placeholder="Escribí tu mensaje aquí..." required></textarea>
-  </div>
+                <div class="grupo-input">
+                    <label for="email">Correo electrónico</label>
+                    <input type="email" id="email" name="email" placeholder="ejemplo@mail.com" required>
+                </div>
 
-  <button type="submit" class="btn-enviar">Enviar</button>
+                <div class="grupo-input">
+                    <label for="consulta">Consulta / Observación</label>
+                    <textarea id="consulta" name="message" rows="5" placeholder="Escribí tu mensaje aquí..."
+                        required></textarea>
+                </div>
 
-</form>
-  </div>
+                <button type="submit" class="btn-enviar">Enviar</button>
 
-</main>
+            </form>
+        </div>
+
+    </main>
 
 
 
@@ -116,9 +115,81 @@
         <p>© 2025 SmartShop. Todos los derechos reservados.</p>
         <p>Av. Siempre Viva 742, Piso 2, CP 1264,Springfield, Oregon, USA.</p>
     </footer>
+    <!-- MODAL DEL CARRITO -->
+    <div id="modal-carrito" class="modal">
+        <div class="modal-content">
 
-    <script src="index.js"></script>
-    <script src="carrito.js" defer></script>
+            <span id="cerrar-modal" class="btn-cerrar">&times;</span>
+            <h2>Tu Carrito</h2>
+
+            <table class="tabla-carrito">
+                <thead>
+                    <tr>
+                        <th>Producto</th>
+                        <th>Cant.</th>
+                        <th>Precio</th>
+                        <th>Eliminar</th>
+
+                    </tr>
+                </thead>
+                <tbody id="tbody-carrito">
+                </tbody>
+            </table>
+
+            <div id="checkout-contenido" style="margin-top:15px;">
+
+                <div class="totalArticulos ">
+                    <p id="cantidadArticulos">Cantidad total de artículos</p>
+
+                    <span id="totalArticulos" style="display:none;"></span>
+
+                    <h3>Datos para la compra</h3>
+
+                    <label>Nombre y apellido</label>
+                    <input type="text" id="nombreUsuario" placeholder="Ejemplo: Juan Pérez">
+
+                    <label>Medio de pago</label>
+                    <select id="medioPagoCheckout">
+                        <option value="">Seleccionar…</option>
+                        <option value="efectivo">Efectivo</option>
+                        <option value="tarjeta">Tarjeta de crédito/débito</option>
+                        <option value="transferencia">Transferencia bancaria</option>
+                        <option value="mercadopago">Mercado Pago</option>
+                    </select>
+
+                    <label>Entrega</label>
+                    <select id="tipoEntrega">
+                        <option value="retiro" selected>Retiro en el local</option>
+                        <option value="envio">Envío a domicilio</option>
+                    </select>
+                    <div id="campoDireccionCheckout" style="display:none;">
+                        <label for="direccionCheckout">Dirección de envío</label>
+                        <input type="text" id="direccionCheckout" placeholder="Calle, número, ciudad">
+                    </div>
+
+                    <div id="campoDireccionCheckout" style="display:none;">
+                        <label>Dirección</label>
+                        <input type="text" id="direccionCheckout" placeholder="Calle, número, ciudad">
+                    </div>
+
+                    <div class="total-container">
+
+                        <span>Total:</span>
+                        <span id="totalCarrito" style="font-weight:bold;"></span>
+                    </div>
+
+                </div>
+
+                <button id="btn-confirmar-compra" class="btn-continuar">
+                    Confirmar compra
+                </button>
+
+
+
+            </div>
+        </div>
+        <script src="index.js"></script>
+        <script src="carrito.js" defer></script>
 
 </body>
 

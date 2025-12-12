@@ -140,6 +140,7 @@
   </div>
 
   <!-- MODAL DEL CARRITO -->
+   <!-- MODAL DEL CARRITO -->
   <div id="modal-carrito" class="modal">
     <div class="modal-content">
 
@@ -152,18 +153,22 @@
             <th>Producto</th>
             <th>Cant.</th>
             <th>Precio</th>
-            <th>Eliminar</th> 
+            <th>Eliminar</th>
 
           </tr>
         </thead>
         <tbody id="tbody-carrito">
-          <!-- Se rellenará desde JS -->
         </tbody>
       </table>
 
       <div id="checkout-contenido" style="margin-top:15px;">
+        
+          <div class="totalArticulos ">
+           <p id="cantidadArticulos">Cantidad total de artículos</p>
 
-        <h3>Datos para la compra</h3>
+          <span id="totalArticulos" style="display:none;"></span>
+        
+          <h3>Datos para la compra</h3>
 
         <label>Nombre y apellido</label>
         <input type="text" id="nombreUsuario" placeholder="Ejemplo: Juan Pérez">
@@ -191,8 +196,9 @@
           <label>Dirección</label>
           <input type="text" id="direccionCheckout" placeholder="Calle, número, ciudad">
         </div>
-
+               
         <div class="total-container">
+       
           <span>Total:</span>
           <span id="totalCarrito" style="font-weight:bold;"></span>
         </div>

@@ -1,4 +1,4 @@
-/* =============== FORMULARIO CONTACTO =============== */
+/*  FORMULARIO CONTACTO */
 .ventanaDeProductos {
   max-height: 600px;
 }
@@ -33,7 +33,6 @@
   font-size: 16px;
 }
 
-/* Campos del formulario */
 .grupo-input {
   display: flex;
   flex-direction: column;
@@ -57,7 +56,6 @@
   background: #f8f8f8;
 }
 
-/* Enfasis al enfocar dentro del input */
 .grupo-input input:focus,
 .grupo-input textarea:focus {
   border-color: #0087f5;
@@ -65,7 +63,6 @@
   box-shadow: 0 0 4px rgba(0, 135, 245, 0.5);
 }
 
-/* Botón enviar */
 .btn-enviar {
   display: block;
   margin: 10px auto 0 auto;
@@ -85,7 +82,6 @@
   transform: scale(1.05);
 }
 
-/* ================= RESPONSIVE ================= */
 @media (max-width: 600px) {
   .formulario-contacto {
     padding: 15px;
@@ -105,25 +101,22 @@ footer{
 }
 
 
-/* ========== FIX FOOTER PEGADO ABAJO (solo para Contactanos) ========== */
-
-/* Fuerza al documento a ocupar el alto total */
 html, body {
     height: 100%;
 }
 
-/* El body se convierte en un contenedor flex vertical */
+
 body {
     display: flex;
     flex-direction: column;
 }
 
-/* El footer queda siempre debajo */
+
 footer {
-    margin-top: auto;    /* 🔥 Garantiza que se pegue abajo */
+    margin-top: auto;
     width: 100%;
 }
-/* ✔ Contenedor del main ajustado al contenido SOLO PARA SUCURSALES */
+
 .contenedor {
     background-color: white;
     border-radius: 10px;
@@ -133,7 +126,6 @@ footer {
     width: 100%;
     max-width: 1200px;
     min-height: auto;
-    /* 🔥 Ajuste de altura correcto */
-    display: block;          /* deja que crezca según contenido */
-    height: auto;            /* se adapta al contenido */
+    display: block;          
+    height: auto;            
 }

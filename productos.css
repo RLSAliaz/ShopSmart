@@ -78,10 +78,10 @@
   transform: scale(0.95);
 }
 
-/* ----- BOTÓN COMPRAR ----- */
+/* BOTÓN COMPRAR  */
 .btn-comprar {
   position: absolute;
-  top: 50px; /* debajo del de carrito */
+  top: 50px; 
   right: 10px;
   background: #0087f5;
   border: none;
@@ -105,9 +105,9 @@
   transform: scale(0.95);
 }
 
-/* ----- MODAL POPUP ----- */
+/* MODAL POPUP  */
 .modal {
-  display: none; /* se verá solo cuando lo activemos */
+  display: none; 
   position: fixed;
   inset: 0;
   z-index: 999;
@@ -187,16 +187,16 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-size: 1.5rem;       /* 🔥 Más grande que el resto */
+  font-size: 1.5rem;      
   font-weight: 900;
-  color: #0dbc45;          /* Verde fuerte */
+  color: #0dbc45;       
   margin: 15px 0;
   border-top: 2px solid #ddd;
   padding-top: 10px;
 }
 
 
-/* ----- TABLA CARRITO EN MODAL ----- */
+/* TABLA CARRITO EN MODAL */
 /* Modal */
 
 /* Contenedor del contenido del modal */
@@ -263,33 +263,29 @@
   }
 }
 
-/* ============================================
-   🔥 MODO MOBILE - SOLO < 600px
-   ============================================ */
+/* MODO MOBILE 600px */
 @media (max-width: 600px) {
 
-  /* La card se adapta */
   .producto-item {
     flex-direction: column;
     align-items: flex-start;
-    padding-bottom: 70px; /* espacio para los botones abajo */
+    padding-bottom: 70px; 
   }
 
-  /* Imagen ocupa todo el ancho */
+  
   .producto-item img {
     width: 100%;
     height: auto;
   }
 
-  /* 🔥 Botones en mobile: dejan de ser absolute */
+ 
   .producto-item .btn-agregar-carrito,
   .producto-item .btn-comprar {
-    position: static !important; /* ✔ desactiva absolute sin afectar desktop */
+    position: static !important; 
     width: 48%;
     margin: 0;
   }
 
-  /* 🔥 Contenedor de botones en mobile */
   .producto-item .botonera-mobile {
     position: absolute;
     bottom: 10px;

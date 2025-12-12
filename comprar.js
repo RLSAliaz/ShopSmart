@@ -8,14 +8,14 @@ const precioProductoElem = document.getElementById("precioProducto");
 const radiosEntrega = document.querySelectorAll('input[name="entrega"]');
 const campoDireccion = document.getElementById('campoDireccion');
 
-// ✔ Mostrar campo dirección SOLO si selecciona envío
+//Mostrar campo dirección SOLO si selecciona envío
 radiosEntrega.forEach(radio => {
   radio.addEventListener('change', () => {
     campoDireccion.style.display = (radio.value === "envio") ? "block" : "none";
   });
 });
 
-// ✔ Abre el modal con datos del producto
+//Abre el modal con datos del producto
 btnComprarList.forEach(boton => {
   boton.addEventListener('click', () => {
     const card = boton.closest(".producto-item");
@@ -29,17 +29,17 @@ btnComprarList.forEach(boton => {
   });
 });
 
-// ✔ Cerrar modal tocando la X
+//Cerrar modal tocando la X
 cerrar.addEventListener('click', () => {
   modal.style.display = "none";
 });
 
-// ✔ Cerrar tocando fuera del contenido
+//Cerrar tocando fuera del contenido
 window.addEventListener('click', (e) => {
   if (e.target === modal) modal.style.display = "none";
 });
 
-// ✔ Botón "Comprar Ahora" — Abre el modal con datos del producto
+//Botón "Comprar Ahora" — Abre el modal con datos del producto
 btnComprarList.forEach(boton => {
   boton.addEventListener('click', () => {
     const card = boton.closest(".producto-item");
@@ -65,25 +65,25 @@ btnComprarList.forEach(boton => {
   });
 });
 
-// 🔹 Variables globales
+// Variables globales
 const cantidadInput = document.getElementById("cantidad");
 const totalCompra = document.getElementById("totalCompra");
 let precioPorUnidad = 0;
 
-// 🔹 Lee el precio crudo del producto
+//Lee el precio crudo del producto
 function obtenerPrecioCrudo(card) {
   const precioSpan = card.querySelector(".precio");
   return parseFloat(precioSpan.dataset.precio);
 }
 
-// 🔹 Calcula y muestra el total en el DOM
+// Calcula y muestra el total en el DOM
 function calcularTotal(precioCrudo) {
   const cantidad = parseInt(cantidadInput.value);
   const precioTotal = precioCrudo * cantidad;
   totalCompra.textContent = `$${precioTotal.toLocaleString('es-AR')}`;
 }
 
-// 🔹 Evento del botón "Comprar Ahora"
+//Evento del botón "Comprar Ahora"
 btnComprarList.forEach(boton => {
   boton.addEventListener("click", () => {
     const card = boton.closest(".producto-item");
@@ -92,7 +92,7 @@ btnComprarList.forEach(boton => {
   });
 });
 
-// 🔹 Cuando cambia la cantidad, se recalcula el total
+//Cuando cambia la cantidad, se recalcula el total
 cantidadInput.addEventListener("input", () => {
   calcularTotal(precioPorUnidad);
 });   

@@ -36,7 +36,6 @@ header {
   align-items: center;
   position: relative;
   box-shadow: 0 3px 8px rgba(0, 0, 0, 0.25);
-  /* igual al botón del carrito */
 }
 
 .header-container {
@@ -227,9 +226,7 @@ main {
 }
 
 
-/* ==========================
-   VENTANA DE PRODUCTOS
-========================== */
+/* VENTANA DE PRODUCTOS */
 .ventanaDeProductos {
   max-width: 1200px;
   width: 100%;
@@ -241,16 +238,18 @@ main {
   padding: 20px;
 }
 
-/* Cuadrícula de productos (4x2 fijo) */
-.gridProductos {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  /* 4 columnas fijas */
-  gap: 25px;
-  justify-items: center;
-  align-items: start;
+.info {
+  width: 100%;
+  min-width: 0;
 }
 
+.product-title {
+  display: block;
+  max-width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
 /* Tarjeta de producto */
 .producto {
   background-color: #f8f8f8;
@@ -262,6 +261,7 @@ main {
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
+
 
 .producto:hover {
   transform: translateY(-5px);
@@ -295,9 +295,7 @@ main {
   font-size: 16px;
 }
 
-/* ==========================
-   FOOTER
-========================== */
+/*FOOTER*/
 footer {
   background: linear-gradient(to right, #0087f5, #005bb5, #0087f5);
   color: white;
@@ -307,9 +305,7 @@ footer {
   box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.5);
 }
 
-/* ==========================
-   CONTENEDOR GENÉRICO
-========================== */
+/*CONTENEDOR GENÉRICO */
 .contenedor {
   background-color: white;
   border-radius: 10px;
@@ -324,7 +320,7 @@ footer {
 /* #endregion*/
 
 
-/*#region  📱 HEADER RESPONSIVE — CELULARES(≤ 768px) */
+/*#region   HEADER RESPONSIVE — CELULARES(≤ 768px) */
 
 @media (max-width: 600px) {
 

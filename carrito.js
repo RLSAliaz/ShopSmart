@@ -6,16 +6,12 @@ const botonCerrar = document.getElementById("cerrar-modal");
 
 // Abrir modal al hacer clic en el botón del carrito
 botonCarrito.addEventListener("click", (e) => {
-    e.preventDefault();        // evita que navegue a productos.html
+    e.preventDefault();        
     renderCarrito();
-    actualizarTotalCarrito();   // ← 🔥 Este calcula y muestra el total
+    actualizarTotalCarrito();  
 
     modalCarrito.style.display = "flex";
 });
-// Botón de carrito responsive (mobile)
-
-
-
 // Cerrar modal al tocar la X
 botonCerrar.addEventListener("click", () => {
     modalCarrito.style.display = "none";
@@ -28,11 +24,9 @@ modalCarrito.addEventListener("click", (e) => {
     }
 });
 
-// ======================
-// CARRITO DINÁMICO
-// ======================
-
+//CARRITO DINÁMICO
 // array del carrito
+
 let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
 
 // función para agregar productos desde card
@@ -56,7 +50,7 @@ function agregarProductoDesdeCard(card) {
     localStorage.setItem("carrito", JSON.stringify(carrito));
 
     console.table(carrito);
-    // ⚠️ ALERT DE CONFIRMACIÓN
+    //ALERT DE CONFIRMACIÓN
     alert(`✔ Producto "${nombre}" agregado al carrito con éxito`);
 }
 
@@ -96,7 +90,6 @@ function renderCarrito() {
     tbody.appendChild(fila);
   });
 
-  // después de generar la tabla:
   actualizarListenersCarrito();
 }
 
@@ -140,12 +133,12 @@ function actualizarListenersCarrito() {
 
 
 
-
+//FUNCION PARA BORRAR ITEMS DEL CARRITO
 function eliminarProducto(indice) {
-    carrito.splice(indice, 1);  // elimina 1 elemento en ese índice
+    carrito.splice(indice, 1);  
     localStorage.setItem("carrito", JSON.stringify(carrito));
-    actualizarTotalCarrito();   // ← 🔥 Este calcula y muestra el total
-    renderCarrito(); // refresca tabla
+    actualizarTotalCarrito();   
+    renderCarrito(); 
 }
 
 function calcularTotalCarrito() {
@@ -179,13 +172,12 @@ document.getElementById("btn-confirmar-compra").addEventListener("click", () => 
 
     alert("✔ Compra confirmada con éxito!");
 
-    // limpiar carrito
     carrito = [];
     localStorage.setItem("carrito", JSON.stringify(carrito));
     renderCarrito();
     actualizarTotalCarrito();
 
-    // cerrar modal
+    
     modalCarrito.style.display = "none";
 });
 
